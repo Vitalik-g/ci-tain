@@ -1,0 +1,15 @@
+name: "ci-tain"
+
+on:
+  push:
+    branches:
+    - main
+
+
+jobs:
+  my_job:
+		runs-on: ubuntu-latest
+
+		steps:
+    - name: test
+      run: echo "test"
