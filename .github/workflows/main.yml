@@ -7,10 +7,12 @@ on:
 
 
 jobs:
-  my_job:
-    runs-on: ubuntu-18.04
+  test:
+    name: Test on node ${{ matrix.node_version }} and ${{ matrix.os }}
+    runs-on: ubuntu-latest
 
-  steps:
-  - name: test
-    run: echo "test"
+
+    steps:
+    - name: test
+      run: echo "test"
     
