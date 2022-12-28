@@ -14,10 +14,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - name: install nginx and configurate
+    - name: test
       run: | 
-        apt update
-        apt install nginx curl -y
-        cp ./.github/files/site.conf /etc/nginx/sites-available/site.conf
-    - name: curl index.html
-      run: curl http://127.0.0.1/
+        whoami
+        pwd
+        ls -la
+    # - name: install nginx and configurate
+    #   run: | 
+    #     apt update
+    #     apt install nginx curl -y
+    #     cp ./.github/files/site.conf /etc/nginx/sites-available/site.conf
+    # - name: curl index.html
+    #   run: curl http://127.0.0.1/
