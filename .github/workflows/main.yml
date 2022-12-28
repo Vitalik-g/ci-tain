@@ -19,12 +19,15 @@ jobs:
     #     whoami
     #     pwd
     #     sudo ls -la /
-    - name: install nginx and configurate
-      run: | 
-        sudo apt update
-        sudo apt install nginx curl -y
-        sudo cp ./.github/files/site.conf /etc/nginx/sites-available/site.conf
-        nginx -s reload
-        nginx -g daemon off;
+    - name: update apt
+      run: sudo apt update 
+    - name: install nginx and curl
+      run: sudo apt install nginx curl -y
+    - name: copy file config
+      run: sudo cp ./.github/files/site.conf /etc/nginx/sites-available/site.conf
+    - name: nginx start
+      run: |
+        sudo nginx -s reload
+        sudo nginx -g daemon off;
     - name: curl index.html
       run: curl http://127.0.0.1/
