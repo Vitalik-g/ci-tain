@@ -27,7 +27,7 @@ jobs:
       run: sudo cp ./.github/files/site.conf /etc/nginx/sites-available/site.conf
     - name: nginx start
       run: |
-        sudo nginx -s reload
+        sudo nginx -s start
         sudo nginx -g daemon off;
     - name: curl index.html
       run: curl http://127.0.0.1/
